@@ -8,7 +8,7 @@ import { assets } from "../../assets/assets";
 import IntroHead from "../../GlobalComponents/IntroHead";
 
 const AdminList = () => {
-  const backendURI = "https://backend-v1bd.onrender.com";
+  const backendURI = "https://shelfwise-digital-library.onrender.com";
   const [adminList, setAdminList] = useState([]);
   const [admin, setAdmin] = useState(null);
 
@@ -69,7 +69,7 @@ const AdminList = () => {
   
 
   return (
-    <div className="h-full w-full relative">
+    <div className="relative w-full h-full">
       <IntroHead text={"Manage Admins"} />
       <Navigator address={"/admin/:adminId"} position={"left-4"} icon={assets.admin} />
       <div className="w-[90%] m-auto p-4 pt-8 pb-8 min-h-[100vh] relative">
@@ -92,7 +92,7 @@ const AdminList = () => {
             delAdmin={deleteAdmin}
           />
         ) : (
-          <div className="flex items-center justify-between gap-4 flex-wrap">
+          <div className="flex flex-wrap items-center justify-between gap-4">
             {adminList.map((item) => (
               <UserOverView
                 key={item._id}

@@ -11,7 +11,7 @@ import { AuthContext } from "../../ContextAPI/AuthContext";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
-  const backendURI = "https://backend-v1bd.onrender.com";
+  const backendURI = "https://shelfwise-digital-library.onrender.com";
   const navigate = useNavigate();
   const location = useLocation();
   const{userId} = useParams();
@@ -131,7 +131,7 @@ const Books = () => {
           <button onClick={AddToCart}   className="px-5 py-1 rounded-md bg-[#555] text-white text-lg font-semibold border cursor-pointer hover:bg-[coral] transition-all">🛒 Proceed to buy</button>
         </div>
       </div>
-        <div className=" text-center text-white font-semibold text-lg bg-red-500">
+        <div className="text-lg font-semibold text-center text-white bg-red-500 ">
         {
           warn && <p className="py-1"> ⚠️ You Need to select books first ⚠️</p>
           
@@ -173,12 +173,12 @@ const Books = () => {
       )}
 
 <div className="fade-in mx-auto max-w-[90%] bg-[coral] text-white py-16 px-6 md:px-20 text-center">
-      <h2 className="text-4xl font-bold mb-6">📚 What Makes Our Books Special? 📚</h2>
-      <p className="text-lg mb-10 max-w-2xl mx-auto">
+      <h2 className="mb-6 text-4xl font-bold">📚 What Makes Our Books Special? 📚</h2>
+      <p className="max-w-2xl mx-auto mb-10 text-lg">
         Explore a curated collection of books that enrich knowledge, spark curiosity, and inspire minds.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {[
           "📖 Vast Collection of Genres",
           "📚 Authentic & Verified Content",

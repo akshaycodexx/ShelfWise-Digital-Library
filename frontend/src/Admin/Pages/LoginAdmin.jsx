@@ -9,7 +9,7 @@ import { AuthContext } from "../../ContextAPI/AuthContext";
 import { jwtDecode } from "jwt-decode";
 
 const LoginAdmin = () => {
-  const backendURI = "https://backend-v1bd.onrender.com";
+  const backendURI = "https://shelfwise-digital-library.onrender.com";
   const navigate = useNavigate();
     const { token, setToken , loggedInAdminData, setLoggedInAdminData} = useContext(AuthContext);
   

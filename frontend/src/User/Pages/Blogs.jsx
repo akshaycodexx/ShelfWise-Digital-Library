@@ -9,7 +9,7 @@ import DisplaySingleBlog from "../Components/DisplaySingleBlog";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
-  const backendURI = "https://backend-v1bd.onrender.com";
+  const backendURI = "https://shelfwise-digital-library.onrender.com";
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -78,13 +78,13 @@ const Blogs = () => {
 
 
 <div className="fade-in max-w-[90%] mx-auto bg-[coral] text-white py-16 px-6 md:px-20 text-center">
-      <h2 className="text-4xl font-bold mb-6">📝 Why Read Our Blogs? 📝</h2>
-      <p className="text-lg mb-10 max-w-2xl mx-auto">
+      <h2 className="mb-6 text-4xl font-bold">📝 Why Read Our Blogs? 📝</h2>
+      <p className="max-w-2xl mx-auto mb-10 text-lg">
         Discover insightful articles, expert opinions, and the latest trends. Stay informed and 
         elevate your knowledge with our hand-picked blogs.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {[
           "📖 In-Depth Educational Content",
           "📰 Latest Trends & Updates",

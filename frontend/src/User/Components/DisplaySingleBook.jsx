@@ -9,7 +9,7 @@ const DisplaySingleBook = ({ book }) => {
   const [searchParams] = useSearchParams();
   const bookId = searchParams.get("id");
   const navigate = useNavigate();
-  const backendURI = "http://localhost:7000";
+  const backendURI = "https://shelfwise-digital-library.onrender.com";
 
   const { loggedInUserData, singleBookDetails, setOrderDetails, orderDetails } = useContext(AuthContext);
   const [address, setAddress] = useState(loggedInUserData?.address || "");
@@ -77,9 +77,9 @@ const DisplaySingleBook = ({ book }) => {
         alt={book.title}
         className="w-full h-[500px] object-cover rounded"
       />
-      <div className="flex items-start gap-4 justify-between w-full h-auto py-3">
-        <div className="p-2 flex-1 rounded">
-          <p className="text-lg text-white bg-green-400 w-fit py-1 px-4 rounded-md mt-3 font-semibold">
+      <div className="flex items-start justify-between w-full h-auto gap-4 py-3">
+        <div className="flex-1 p-2 rounded">
+          <p className="px-4 py-1 mt-3 text-lg font-semibold text-white bg-green-400 rounded-md w-fit">
             {book.status}
           </p>
           <h1 className="text-3xl font-bold text-[#c17130] mt-5">{book.title}</h1>
@@ -99,7 +99,7 @@ const DisplaySingleBook = ({ book }) => {
           <div className="h-[200px] w-full p-3">
             <img
               src={book.authorImg}
-              className="h-full rounded w-full object-cover"
+              className="object-cover w-full h-full rounded"
               alt={book.author}
             />
           </div>
@@ -112,23 +112,23 @@ const DisplaySingleBook = ({ book }) => {
       <div className="flex items-center justify-start gap-5 my-5">
         <button
           onClick={purchaseBook}
-          className="px-6 py-3 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600 hover:shadow-lg transition duration-300 ease-in-out"
+          className="px-6 py-3 font-semibold text-white transition duration-300 ease-in-out bg-green-500 rounded-md shadow-md hover:bg-green-600 hover:shadow-lg"
         >
           Buy
         </button>
-        <button className="px-6 py-3 bg-white text-green-500 border-2 border-green-500 font-semibold rounded-md shadow-md hover:bg-green-500 hover:text-white hover:shadow-lg transition duration-300 ease-in-out">
+        <button className="px-6 py-3 font-semibold text-green-500 transition duration-300 ease-in-out bg-white border-2 border-green-500 rounded-md shadow-md hover:bg-green-500 hover:text-white hover:shadow-lg">
           Rent
         </button>
         {(book.status === "Unavailable" || book.status === "Out of Stock") && (
-          <button className="px-6 py-3 bg-red-500 text-white font-semibold rounded-md shadow-md hover:bg-red-600 hover:shadow-lg transition duration-300 ease-in-out">
+          <button className="px-6 py-3 font-semibold text-white transition duration-300 ease-in-out bg-red-500 rounded-md shadow-md hover:bg-red-600 hover:shadow-lg">
             Request Book
           </button>
         )}
       </div>
 
-      <div className="h-auto w-full pb-5 pt-10">
+      <div className="w-full h-auto pt-10 pb-5">
         <h2 className="text-[#555555dc] text-lg">Discover more for same Genre/Author</h2>
-        <div className="h-auto w-full flex items-center justify-start gap-5 flex-wrap"></div>
+        <div className="flex flex-wrap items-center justify-start w-full h-auto gap-5"></div>
       </div>
     </div>
   );

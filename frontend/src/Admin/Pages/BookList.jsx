@@ -9,7 +9,7 @@ import IntroHead from "../../GlobalComponents/IntroHead";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
-  const backendURI = "https://backend-v1bd.onrender.com";
+  const backendURI = "https://shelfwise-digital-library.onrender.com";
 
   const navigate = useNavigate();
   const location = useLocation();

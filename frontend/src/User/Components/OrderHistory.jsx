@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { assets } from "../../assets/assets";
 
 const OrderHistory = () => {
-  const backendURI = "http://localhost:7000";
+  const backendURI = "https://shelfwise-digital-library.onrender.com";
   const { userId } = useParams();
   const [allOrders, setAllOrders] = useState([]);
 
@@ -51,7 +51,7 @@ const OrderHistory = () => {
 
   return (
     
-    <div className="h-auto w-full flex flex-wrap items-center justify-between gap-5">
+    <div className="flex flex-wrap items-center justify-between w-full h-auto gap-5">
       {allOrders.map((order) => (
         order.items.map((book, index) => {
           // Ensure book exists and has at least some required fields
@@ -73,7 +73,7 @@ const OrderHistory = () => {
               <div className="h-[100px] w-[100px] rounded-full bg-[coral]">
                 <img  
                   src={imgSrc}
-                  className="h-full w-full object-cover rounded-full"
+                  className="object-cover w-full h-full rounded-full"
                   alt={title}
                 />
               </div>

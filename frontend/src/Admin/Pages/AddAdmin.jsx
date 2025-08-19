@@ -11,7 +11,7 @@ const { Option } = Select;
 
 const AddAdmin = () => {
   const [fileList, setFileList] = useState([]);
-  const backendURI = "https://backend-v1bd.onrender.com";
+  const backendURI = "https://shelfwise-digital-library.onrender.com";
   const navigate = useNavigate();
   const { adminId } = useParams(); 
  
@@ -54,7 +54,7 @@ const AddAdmin = () => {
   }; 
 
   return (
-    <div className="h-full w-full relative">
+    <div className="relative w-full h-full">
       <IntroHead text={'Add an Admin'}/>
     <Navigator address={`/admin/${adminId}`} position={'left-4'} icon={assets.admin}/>
     <div className="w-[90%] m-auto py-5 relative">
